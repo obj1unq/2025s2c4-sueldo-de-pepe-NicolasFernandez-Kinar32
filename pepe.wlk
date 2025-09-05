@@ -3,13 +3,15 @@ object pepe {
     var property tipoBonoResultados = bonoPorcentaje
     var property tipoBonoPresentismo = bonoNormal
     var property faltas = 0
+    var saldo = 0
 
     method neto() = categoria.neto()
     method bonoResultados() = tipoBonoResultados.bono(self)
     method bonoPresentismo() = tipoBonoPresentismo.bono(self)
 	method cobrarSueldo(){
-        self.neto() + self.bonoResultados() + self.bonoPresentismo()
+        saldo = self.neto() + self.bonoResultados() + self.bonoPresentismo()
     }
+    method saldo() = saldo
 }
 
 
